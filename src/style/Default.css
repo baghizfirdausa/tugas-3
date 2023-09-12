@@ -25,7 +25,7 @@ td {
 
 /* Style for Form */
 form {
-  width: 20vw;
+  width: 30vw;
 }
 
 .inputText {
@@ -38,4 +38,14 @@ form {
   display: flex;
   justify-content: flex-end;
   margin-top: 16px;
+}
+
+.passwordInput {
+  display: flex;
+  justify-content: space-between;
+  width: 310px;
+}
+
+.input {
+  width: 300px;
 }

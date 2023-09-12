@@ -1,12 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
+
 import { createBrowserRouter, createRoutesFromElements, Route, NavLink, Outlet, RouterProvider } from "react-router-dom";
 import Home from "./pages/home";
 import List from "./pages/listUser";
 import Regis from "./pages/registrationUser";
 import Error from "./pages/error";
-import './style/Default.css'
+
+import './style/Default.css';
+
+import store from './redux/store';
+import { Provider } from 'react-redux';
 
 export default function App() {
   const router = createBrowserRouter (
@@ -45,7 +50,9 @@ const Root = () => {
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>
 );
 
