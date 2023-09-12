@@ -11,7 +11,9 @@ const addSlice = createSlice({
   reducers: {
     add(state, action) {
       const payload = { ...action.payload }
-      state.users.push({ id: state.id, ...payload })
+      const newDate = new Date()
+      const nowDate = `${newDate.getFullYear()}-${newDate.getMonth() + 1}-${newDate.getDate()}`
+      state.users.push({ id: state.id, ...payload, registeredDate: nowDate })
       state.id += 1
     },
   },

@@ -8,7 +8,7 @@ const form = {
   email: '',
   phone: '',
   level: 'administrator',
-  role: '',
+  role: 'IT Network',
   status: '',
   pass: '',
   repass: '',
@@ -106,7 +106,15 @@ function Form() {
         </div>
         <div className='inputText'>
           <label>Role</label>
-          <input className='input' type="text" name='role' onChange={handleChange}/>
+          <select name="role" style={{width: `308px`}} onChange={handleChange}>
+            <option value="IT Network">IT Netowrk</option>
+            <option value="IT Developer">IT Developer</option>
+            <option value="IT FA">IT FA</option>
+            <option value="IT Operation">IT Operation</option>
+            <option value="Finance">Finance</option>
+            <option value="Accounting">Accounting</option>
+            <option value="Sales & Marketing">Sales & Marketing</option>
+          </select>
           <div style={{color: 'red'}}>{errors.role}</div>
         </div>
         <div className='inputText'>
