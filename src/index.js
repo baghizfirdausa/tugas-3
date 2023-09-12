@@ -1,8 +1,46 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { createBrowserRouter, createRoutesFromElements, Route, NavLink, Outlet, RouterProvider } from "react-router-dom";
+import Home from "./pages/home";
+import List from "./pages/listUser";
+import Regis from "./pages/registrationUser";
+import Error from "./pages/error";
+import './style/Default.css'
+
+export default function App() {
+  const router = createBrowserRouter (
+    createRoutesFromElements(
+      <Route path="/" element={<Root />}>
+        <Route index element={<Home />} />
+        <Route path='/list' element={<List />} />
+        <Route path="/registration" element={<Regis />} />
+        <Route path="*" element={<Error />} />
+      </Route>
+    )
+  )
+
+  return (
+    <div>
+      <RouterProvider router={router} />
+    </div>
+  )
+}
+
+const Root = () => {
+  return (
+    <>
+      <div style={{margin: '24px'}}>
+        <NavLink className={({isActive}) => isActive ? 'active' : 'link'} to="/list">User List</NavLink> 
+        <NavLink className={({isActive}) => isActive ? 'active' : 'link'} to="/registration">Registration User</NavLink> 
+      </div>
+
+      <div>
+        <Outlet />
+      </div>
+    </>
+  )
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

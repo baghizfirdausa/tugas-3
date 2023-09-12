@@ -1,3 +1,15 @@
+/* Style for Link */
+.link {
+  color: black;
+  margin-right: 16px;
+  text-decoration: none;
+}
+
+.active {
+  color: blue;
+  margin-right: 16px;
+}
+
 /* Style for Table */
 table {
   width: 90vw;
