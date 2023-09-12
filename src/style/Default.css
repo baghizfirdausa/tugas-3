@@ -1,0 +1,29 @@
+/* Style for Table */
+table {
+  width: 90vw;
+}
+
+th {
+  border: 1px solid black;
+}
+
+td {
+  border: 1px solid black;
+}
+
+/* Style for Form */
+form {
+  width: 20vw;
+}
+
+.inputText {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.submitButton {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
